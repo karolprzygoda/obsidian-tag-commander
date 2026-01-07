@@ -1,90 +1,105 @@
-# Obsidian Sample Plugin
+# Tag Commander
 
-This is a sample plugin for Obsidian (https://obsidian.md).
+Advanced tag management plugin for [Obsidian](https://obsidian.md) - Add, Remove, and Edit tags across files and folders with ease.
 
-This project uses TypeScript to provide type checking and documentation.
-The repo depends on the latest plugin API (obsidian.d.ts) in TypeScript Definition format, which contains TSDoc comments describing what it does.
+![Obsidian](https://img.shields.io/badge/Obsidian-v1.0.0+-7C3AED?logo=obsidian&logoColor=white)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-This sample plugin demonstrates some of the basic functionality the plugin API can do.
-- Adds a ribbon icon, which shows a Notice when clicked.
-- Adds a command "Open modal (simple)" which opens a Modal.
-- Adds a plugin setting tab to the settings page.
-- Registers a global click event and output 'click' to the console.
-- Registers a global interval which logs 'setInterval' to the console.
+## Features
 
-## First time developing plugins?
+### 🏷️ Add Tags
+- Add single or multiple tags (comma-separated) to files
+- Autocomplete suggestions from existing vault tags
+- Duplicate prevention - won't add tags that already exist
 
-Quick starting guide for new plugin devs:
+### 🗑️ Remove Tags
+- Batch removal with toggle switches
+- Visual list of all tags in selected files
+- Remove multiple tags at once
 
-- Check if [someone already developed a plugin for what you want](https://obsidian.md/plugins)! There might be an existing plugin similar enough that you can partner up with.
-- Make a copy of this repo as a template with the "Use this template" button (login to GitHub if you don't see it).
-- Clone your repo to a local development folder. For convenience, you can place this folder in your `.obsidian/plugins/your-plugin-name` folder.
-- Install NodeJS, then run `npm i` in the command line under your repo folder.
-- Run `npm run dev` to compile your plugin from `main.ts` to `main.js`.
-- Make changes to `main.ts` (or create new `.ts` files). Those changes should be automatically compiled into `main.js`.
-- Reload Obsidian to load the new version of your plugin.
-- Enable plugin in settings window.
-- For updates to the Obsidian API run `npm update` in the command line under your repo folder.
+### ✏️ Edit / Rename Tags
+- Select source tag from dropdown
+- Enter new tag name with autocomplete
+- **Conditional Upsert** - optionally add the new tag to files that don't have the source tag
 
-## Releasing new releases
+### 📁 Folder Operations
+- Process entire folders at once
+- **Include Subfolders** toggle
+- **Depth Level** selector (1, 2, 3, 5, 10, or infinite)
 
-- Update your `manifest.json` with your new version number, such as `1.0.1`, and the minimum Obsidian version required for your latest release.
-- Update your `versions.json` file with `"new-plugin-version": "minimum-obsidian-version"` so older versions of Obsidian can download an older version of your plugin that's compatible.
-- Create new GitHub release using your new version number as the "Tag version". Use the exact version number, don't include a prefix `v`. See here for an example: https://github.com/obsidianmd/obsidian-sample-plugin/releases
-- Upload the files `manifest.json`, `main.js`, `styles.css` as binary attachments. Note: The manifest.json file must be in two places, first the root path of your repository and also in the release.
-- Publish the release.
+## Usage
 
-> You can simplify the version bump process by running `npm version patch`, `npm version minor` or `npm version major` after updating `minAppVersion` manually in `manifest.json`.
-> The command will bump version in `manifest.json` and `package.json`, and add the entry for the new version to `versions.json`
+### Context Menu (File Explorer)
+1. Right-click on a file, multiple files, or a folder in the file explorer
+2. Select **"Tag Commander"** from the context menu
+3. Choose: **Add Tags**, **Remove Tags**, or **Edit Tags**
 
-## Adding your plugin to the community plugin list
+### Command Palette
+Press `Ctrl/Cmd + P` and search for:
+- **"Tag Commander: Add Tags..."**
+- **"Tag Commander: Remove Tags..."**
+- **"Tag Commander: Edit Tags..."**
 
-- Check the [plugin guidelines](https://docs.obsidian.md/Plugins/Releasing/Plugin+guidelines).
-- Publish an initial version.
-- Make sure you have a `README.md` file in the root of your repo.
-- Make a pull request at https://github.com/obsidianmd/obsidian-releases to add your plugin.
+Each command opens a selection modal where you can:
+- Select a folder (with subfolder options)
+- Select individual files
 
-## How to use
+## Installation
 
-- Clone this repo.
-- Make sure your NodeJS is at least v16 (`node --version`).
-- `npm i` or `yarn` to install dependencies.
-- `npm run dev` to start compilation in watch mode.
+### From Obsidian Community Plugins
+1. Open **Settings** → **Community plugins**
+2. Click **Browse** and search for "Tag Commander"
+3. Click **Install**, then **Enable**
 
-## Manually installing the plugin
+### Manual Installation
+1. Download `main.js`, `manifest.json`, and `styles.css` from the [releases page](https://github.com/karolprzygoda/tag-commander/releases)
+2. Create folder: `YourVault/.obsidian/plugins/tag-commander/`
+3. Copy the downloaded files into this folder
+4. Reload Obsidian
+5. Enable the plugin in **Settings** → **Community plugins**
 
-- Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
+## Development
 
-## Improve code quality with eslint
-- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code. 
-- This project already has eslint preconfigured, you can invoke a check by running`npm run lint`
-- Together with a custom eslint [plugin](https://github.com/obsidianmd/eslint-plugin) for Obsidan specific code guidelines.
-- A GitHub action is preconfigured to automatically lint every commit on all branches.
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- npm
 
-## Funding URL
+### Setup
+```bash
+# Clone the repository
+git clone https://github.com/karolprzygoda/tag-commander.git
+cd tag-commander
 
-You can include funding URLs where people who use your plugin can financially support it.
+# Install dependencies
+npm install
 
-The simple way is to set the `fundingUrl` field to your link in your `manifest.json` file:
+# Build for production
+npm run build
 
-```json
-{
-    "fundingUrl": "https://buymeacoffee.com"
-}
+# Development mode (watch for changes)
+npm run dev
 ```
 
-If you have multiple URLs, you can also do:
-
-```json
-{
-    "fundingUrl": {
-        "Buy Me a Coffee": "https://buymeacoffee.com",
-        "GitHub Sponsor": "https://github.com/sponsors",
-        "Patreon": "https://www.patreon.com/"
-    }
-}
+### Project Structure
+```
+tag-commander/
+├── main.ts          # Main plugin source code
+├── main.js          # Compiled plugin (generated)
+├── styles.css       # Plugin styles
+├── manifest.json    # Plugin metadata
+├── package.json     # Node.js dependencies
+├── tsconfig.json    # TypeScript configuration
+└── esbuild.config.mjs  # Build configuration
 ```
 
-## API Documentation
+## License
 
-See https://docs.obsidian.md
+MIT License - see [LICENSE](LICENSE) for details.
+
+## Author
+
+Created by **Karol Przygoda**
+
+---
+
+If you find this plugin useful, consider giving it a ⭐ on GitHub!
