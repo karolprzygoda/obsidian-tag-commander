@@ -139,6 +139,7 @@ class FileSelectionModal extends Modal {
     super(plugin.app);
     this.plugin = plugin;
     this.action = action;
+    this.modalEl.addClass('tag-modal');
   }
 
   onOpen() {
@@ -345,6 +346,7 @@ abstract class BaseTagModal extends Modal {
       depthLevel: -1,
     };
     this.existingTags = [];
+    this.modalEl.addClass('tag-modal');
   }
 
   async onOpen() {
