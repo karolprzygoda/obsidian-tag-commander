@@ -285,27 +285,3 @@
 .tag-commander-button-row-remove {
   border-top: none;
 }
-
-@keyframes slideUp {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .tag-modal {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    max-height: 70% !important;
-    align-self: flex-end !important;
-    border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-    border-left: none !important;
-    border-right: none !important;
-    border-bottom: none !important;
-    animation: slideUp 0.3s ease-out;
-  }
-}
