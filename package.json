@@ -1,0 +1,29 @@
+{
+	"name": "obsidian-tag-commander",
+	"version": "1.0.0",
+	"description": "Tag management plugin for Obsidian",
+	"main": "main.js",
+	"type": "module",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"version": "node version-bump.mjs && git add manifest.json versions.json",
+		"lint": "eslint .",
+		"format": "prettier --write \"src/**/*.ts\""
+	},
+	"keywords": [],
+	"license": "0-BSD",
+	"devDependencies": {
+		"@eslint/js": "^9.30.1",
+		"@types/node": "^22.15.0",
+		"esbuild": "^0.25.5",
+		"eslint": "^9.30.1",
+		"eslint-plugin-obsidianmd": "^0.1.9",
+		"globals": "^14.0.0",
+		"obsidian": "^1.8.7",
+		"prettier": "^3.5.3",
+		"tslib": "^2.4.0",
+		"typescript": "~5.8.3",
+		"typescript-eslint": "^8.35.1"
+	}
+}

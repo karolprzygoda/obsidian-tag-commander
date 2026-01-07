@@ -1,0 +1,11 @@
+{
+  "id": "obsidian-tag-commander",
+  "name": "Tag Commander",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Advanced tag management for Obsidian - Add, Remove, and Edit tags across files and folders with ease.",
+  "author": "Karol Przygoda",
+  "authorUrl": "https://github.com/karolprzygoda",
+  "isDesktopOnly": false,
+  "main": "main.js"
+}

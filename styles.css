@@ -1,0 +1,287 @@
+/* ============================================================================
+   Tag Commander - Obsidian Plugin Styles
+   Minimal styling to work with Obsidian's native components
+   ============================================================================ */
+
+/* Modal Base */
+.tag-commander-modal {
+  padding: 0;
+}
+
+.tag-commander-modal h2 {
+  margin: 16px 0 0 0;
+  padding: 0 0 12px 0 !important;
+  font-size: 1.4em;
+  font-weight: 600;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.tag-commander-subtitle {
+  margin: 16px 0 16px 0;
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+
+/* Folder Options Section */
+.tag-commander-folder-options {
+  background: var(--background-secondary);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0 0 0;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.tag-commander-folder-options h4 {
+  margin: 0 0 8px 0;
+  font-size: 1em;
+}
+
+.tag-commander-folder-path {
+  font-family: var(--font-monospace);
+  font-size: 0.85em;
+  color: var(--text-accent);
+  background: var(--background-primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.tag-commander-file-count {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: var(--background-primary-alt);
+  border-radius: 4px;
+  font-weight: 500;
+  color: var(--text-accent);
+}
+
+/* Input Section */
+.tag-commander-input-section {
+  margin-bottom: 16px;
+}
+
+.tag-commander-input-label {
+  font-weight: 600;
+  font-size: 1em;
+  margin-bottom: 4px;
+  color: var(--text-normal);
+}
+
+.tag-commander-input-desc {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.tag-commander-tag-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font-size: 1em;
+}
+
+.tag-commander-tag-input:focus {
+  border-color: var(--interactive-accent);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(var(--interactive-accent-rgb), 0.15);
+}
+
+.tag-commander-tag-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+/* Existing Tags Hint */
+.tag-commander-existing-tags {
+  background: var(--background-secondary);
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 0.85em;
+}
+
+.tag-commander-existing-tags span {
+  color: var(--text-muted);
+}
+
+.tag-commander-existing-tags code {
+  background: var(--background-primary);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--text-accent);
+  font-size: 0.9em;
+}
+
+/* No Tags Message */
+.tag-commander-no-tags {
+  text-align: center;
+  padding: 30px;
+  color: var(--text-muted);
+  font-style: italic;
+  background: var(--background-secondary);
+  border-radius: 8px;
+}
+
+/* Mode Toggle */
+.tag-commander-mode-toggle {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+/* Mode Content Container */
+.tag-commander-mode-content {
+  margin-bottom: 16px;
+}
+
+/* Batch Mode Description */
+.tag-commander-batch-desc {
+  margin-bottom: 12px;
+  color: var(--text-muted);
+  font-size: 0.9em;
+}
+
+/* Tag List (Batch Mode) */
+.tag-commander-tag-list {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: var(--background-secondary);
+}
+
+.tag-commander-tag-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.tag-commander-tag-item:last-child {
+  border-bottom: none;
+}
+
+.tag-commander-tag-label {
+  font-family: var(--font-monospace);
+  font-size: 0.9em;
+}
+
+/* Edit Form */
+.tag-commander-edit-form {
+  margin-bottom: 16px;
+}
+
+/* Button Row */
+.tag-commander-button-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+/* ============================================================================
+   Edit Tags Modal - Grid Layout
+   ============================================================================ */
+
+/* Header Row */
+.tag-commander-edit-header {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr;
+  gap: 12px;
+  padding: 10px 14px;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  min-width: 360px;
+}
+
+.tag-commander-edit-header > span {
+  text-wrap: nowrap;
+}
+
+/* Edit List Container */
+.tag-commander-edit-list {
+  max-height: 350px;
+  overflow-y: auto;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: var(--background-secondary);
+}
+
+/* Edit Row */
+.tag-commander-edit-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  opacity: 0.6;
+  transition: opacity 0.15s ease;
+  text-wrap: nowrap;
+  min-width: 360px;
+}
+
+.tag-commander-edit-row:last-child {
+  border-bottom: none;
+}
+
+.tag-commander-edit-row-enabled {
+  opacity: 1;
+  background: var(--background-primary-alt);
+}
+
+/* Edit Row Cells */
+.tag-commander-edit-cell-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag-commander-edit-cell-tag {
+  display: flex;
+  align-items: center;
+  text-wrap: nowrap;
+}
+
+.tag-commander-edit-cell-new {
+  display: flex;
+  align-items: center;
+}
+
+.tag-commander-edit-input {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font-size: 0.9em;
+}
+
+.tag-commander-edit-input:focus {
+  border-color: var(--interactive-accent);
+  outline: none;
+}
+
+/* Selection Content (File Selection Modal) */
+.tag-commander-selection-content {
+  margin: 16px 0;
+}
+
+.tag-commander-setting-item {
+  border: none;
+  padding: 16px 0 16px 0;
+}
+
+.tag-commander-button-row-remove {
+  border-top: none;
+}
